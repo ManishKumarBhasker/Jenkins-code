@@ -1,27 +1,38 @@
 pipeline{
-   agent{
-       label "node"
-   }
+    agent{
+        label "node"
+    }
     stages{
-        stage("A"){
+        stage("echo a line"){
             steps{
-                echo "========executing A========"
+                echo "this is step one"
             }
             
     }
-    stage("B"){
+    stage("run a multiple command"){
             steps{
-                echo "========executing A========"
+                 sh '''pwd
+                ls 
+                date 
+                cat'''
             }
             
     }
-    stage("C"){
+    stage("run a command"){
             steps{
-                echo "========executing A========"
+                sh 'pwd'
             }
             
     }
-}
+    stage("run a command"){
+            steps{
+                sh '''pwd
+                ls 
+                date 
+                cat'''
+            }
+            
+    }
     post{
         always{
             echo "========always========"
@@ -34,4 +45,3 @@ pipeline{
         }
     }
 }
-
