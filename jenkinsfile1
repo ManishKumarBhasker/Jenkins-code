@@ -22,15 +22,7 @@ pipeline{
             }
             
     }
-    stage("run a command"){
-            steps{
-                sh '''pwd
-                ls 
-                date 
-                cat'''
-            }
-            
-    }
+   
 }
     post{
         always{
